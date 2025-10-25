@@ -8,13 +8,17 @@ import Artists from "./pages/Artists";
 export default function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/albums" element={<Albums />} />
-        <Route path="/artists" element={<Artists />} />
-      </Routes>
-      <Footer />
+      <div>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/albums" element={<Albums />} />
+            <Route path="/artists" element={<Artists />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }
