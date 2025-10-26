@@ -10,7 +10,22 @@ export default function Footer() {
 
         <div className="flex gap-5">
           <a
-            href="https://www.linkedin.com/in/juanpablokass"
+            href="https://github.com/juamqi/catalogo-musical-informatorio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-black transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              className="w-5 h-5"
+            >
+              <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.41 7.86 10.94.58.11.79-.25.79-.56v-2.05c-3.2.69-3.88-1.54-3.88-1.54-.53-1.36-1.29-1.72-1.29-1.72-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.04 1.78 2.73 1.27 3.4.97.11-.76.41-1.27.74-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.45.11-3.03 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.74.11 3.03.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.28 5.68.42.36.8 1.08.8 2.18v3.23c0 .31.21.67.79.56A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z" />
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/juamqi"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-black transition-colors"
@@ -25,21 +40,7 @@ export default function Footer() {
             </svg>
           </a>
 
-          <a
-            href="https://github.com/juanpablokass"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-black transition-colors"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              className="w-5 h-5"
-            >
-              <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.41 7.86 10.94.58.11.79-.25.79-.56v-2.05c-3.2.69-3.88-1.54-3.88-1.54-.53-1.36-1.29-1.72-1.29-1.72-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.04 1.78 2.73 1.27 3.4.97.11-.76.41-1.27.74-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.45.11-3.03 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.74.11 3.03.74.8 1.19 1.83 1.19 3.09 0 4.43-2.7 5.4-5.28 5.68.42.36.8 1.08.8 2.18v3.23c0 .31.21.67.79.56A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z" />
-            </svg>
-          </a>
+
         </div>
       </div>
     </footer>

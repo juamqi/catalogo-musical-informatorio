@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@keyframes equalizer {
+  0%   { transform: scaleY(0.4); }
+  20%  { transform: scaleY(1.0); }
+  40%  { transform: scaleY(0.3); }
+  60%  { transform: scaleY(0.85); }
+  80%  { transform: scaleY(0.5); }
+  100% { transform: scaleY(0.4); }
+}
+
+.animate-equalizer {
+  animation-name: equalizer;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+}
