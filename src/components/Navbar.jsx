@@ -4,17 +4,21 @@ export default function Navbar() {
   const location = useLocation();
 
   const linkStyle = (path) =>
-    `text-sm font-medium transition-colors hover:text-gray-900 ${
-      location.pathname === path ? "text-black font-semibold" : "text-gray-600"
+    `relative text-base tracking-wide transition-all duration-300 ${location.pathname === path
+      ? "text-[#FF6500] font-semibold"
+      : "text-white"
     }`;
 
   return (
-    <nav className="w-full bg-white/90 backdrop-blur-sm shadow-sm py-4 px-8 flex justify-between items-center sticky top-0 z-50">
-      <Link to="/" className="text-lg font-bold tracking-wide text-black">
-        Mi catálogo musical
+    <nav className="w-full bg-black/40 backdrop-blur-md shadow-lg py-5 px-10 flex justify-between items-center sticky top-0 z-50 border-b border-white/10">
+      <Link
+        to="/"
+        className="text-lg text-white tracking-widest"
+      >
+        Mi Catálogo Musical
       </Link>
 
-      <div className="flex gap-8">
+      <div className="flex gap-10">
         <Link to="/" className={linkStyle("/")}>
           Inicio
         </Link>

@@ -2,8 +2,7 @@ export default function ArtistCard({ name, img }) {
   return (
     <div
       className="
-        flex flex-col items-center justify-center
-        cursor-pointer p-4
+        flex flex-col items-center justify-center p-4
         transform transition-all duration-300
         hover:-translate-y-2 hover:scale-[1.05]
       "
@@ -17,7 +16,7 @@ export default function ArtistCard({ name, img }) {
           transition-all duration-300
         "
       />
-      <p className="mt-3 text-base font-medium text-gray-900">{name}</p>
+      <p className="mt-3 text-xl font-semibold text-white">{name}</p>
     </div>
   );
 }

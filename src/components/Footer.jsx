@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
-    <footer className="w-full bg-gray-100 py-6">
-      <div className="container mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-600">
+    <footer className="w-full bg-[#1E3E62] py-6">
+      <div className="container mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-white">
         <p className="text-center sm:text-left">
           Desarrollado por{" "}
-          <span className="font-medium text-gray-800">Juan Pablo Kass</span> para
+          <span className="font-medium text-[#FF6500]">Juan Pablo Kass</span> para
           la Etapa 3 del Informatorio: Especialización en React
         </p>
 
@@ -13,7 +13,7 @@ export default function Footer() {
             href="https://github.com/juamqi/catalogo-musical-informatorio"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-black transition-colors"
+            className="hover:text-[#FF6500] transition-colors text-white"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/juamqi"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-black transition-colors"
+            className="hover:text-[#FF6500] transition-colors text-white"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

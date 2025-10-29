@@ -1,12 +1,40 @@
 @import "tailwindcss";
 
+body {
+  background-color: #0B192C;
+  color: #FFFFFF;
+  font-family: 'Manrope', sans-serif;
+}
+
+h1 {
+  font-family: 'Zen Tokyo Zoo', cursive;
+  color: #FF6500;
+}
+
 @keyframes equalizer {
-  0%   { transform: scaleY(0.4); }
-  20%  { transform: scaleY(1.0); }
-  40%  { transform: scaleY(0.3); }
-  60%  { transform: scaleY(0.85); }
-  80%  { transform: scaleY(0.5); }
-  100% { transform: scaleY(0.4); }
+  0% {
+    transform: scaleY(0.4);
+  }
+
+  20% {
+    transform: scaleY(1.0);
+  }
+
+  40% {
+    transform: scaleY(0.3);
+  }
+
+  60% {
+    transform: scaleY(0.85);
+  }
+
+  80% {
+    transform: scaleY(0.5);
+  }
+
+  100% {
+    transform: scaleY(0.4);
+  }
 }
 
 .animate-equalizer {

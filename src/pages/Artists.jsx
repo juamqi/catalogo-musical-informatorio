@@ -4,12 +4,14 @@ import SearchBar from "../components/SearchBar";
 import ArtistCard from "../components/ArtistCard";
 
 export default function Artists() {
-  const [artists, setArtists] = useState(allArtists);
+  const [artists, setArtists] = useState(
+    [...allArtists].sort((a, b) => a.name.localeCompare(b.name))
+  );
 
   const handleSearch = (query) => {
-    const filtered = allArtists.filter((a) =>
-      a.name.toLowerCase().includes(query.toLowerCase())
-    );
+    const filtered = allArtists
+      .filter((a) => a.name.toLowerCase().includes(query.toLowerCase()))
+      .sort((a, b) => a.name.localeCompare(b.name));
     setArtists(filtered);
   };
 
@@ -23,8 +25,8 @@ export default function Artists() {
   };
 
   return (
-    <main className="flex flex-col items-center gap-10">
-      <h2 className="text-2xl font-semibold mt-6">Artistas</h2>
+    <main className="flex flex-col items-center gap-10 mt-10">
+      <h1 className="text-5xl">ARTISTAS</h1>
 
       <SearchBar onSearch={handleSearch} onSort={handleSort} />
 

@@ -4,12 +4,14 @@ import AlbumCard from "../components/AlbumCard";
 import SearchBar from "../components/SearchBar";
 
 export default function Albums() {
-  const [albums, setAlbums] = useState(allAlbums);
+  const [albums, setAlbums] = useState(
+    [...allAlbums].sort((a, b) => a.title.localeCompare(b.title))
+  );
 
   const handleSearch = (query) => {
-    const filtered = allAlbums.filter((a) =>
-      a.title.toLowerCase().includes(query.toLowerCase())
-    );
+    const filtered = allAlbums
+      .filter((a) => a.title.toLowerCase().includes(query.toLowerCase()))
+      .sort((a, b) => a.title.localeCompare(b.title));
     setAlbums(filtered);
   };
 
@@ -23,12 +25,12 @@ export default function Albums() {
   };
 
   return (
-    <main className="flex flex-col items-center gap-10">
-      <h2 className="text-2xl font-semibold mt-6">Álbumes</h2>
+    <main className="flex flex-col items-center gap-10 mt-10 mb-30">
+      <h1 className="text-7xl">ÁLBUMES</h1>
 
       <SearchBar onSearch={handleSearch} onSort={handleSort} />
 
-      <div className="flex flex-wrap justify-center gap-8 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-4">
         {albums.map((a) => (
           <AlbumCard key={a.id} {...a} />
         ))}
