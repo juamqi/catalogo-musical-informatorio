@@ -27,7 +27,7 @@ export default function SearchBar({ onSearch, onSort }) {
       />
       <button
         onClick={handleSort}
-        className="flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-black transition"
+        className="cursor-pointer flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-black transition"
       >
         <SlidersHorizontal className="w-4 h-4" />
         {order === "asc" ? "A-Z" : "Z-A"}

@@ -11,6 +11,20 @@ h1 {
   color: #FF6500;
 }
 
+.card-glow:hover {
+  box-shadow: 0 0 20px #ff6500aa;
+}
+
+.animate-equalizer {
+  animation-name: equalizer;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+  animation: equalizer 1.8s ease-in-out infinite;
+  background: linear-gradient(to top, #ff6500, #ff9a00);
+  filter: drop-shadow(0 0 4px #ff6500aa);
+}
+
 @keyframes equalizer {
   0% {
     transform: scaleY(0.4);
@@ -35,11 +49,4 @@ h1 {
   100% {
     transform: scaleY(0.4);
   }
-}
-
-.animate-equalizer {
-  animation-name: equalizer;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  transform-origin: center;
 }

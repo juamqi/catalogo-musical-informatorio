@@ -11,9 +11,10 @@ export default function ArtistCard({ name, img }) {
         src={img}
         alt={name}
         className="
-          w-70 h-70 object-cover rounded-full
+          w-80 h-80 object-cover rounded-full
           shadow-sm hover:shadow-lg
           transition-all duration-300
+          card-glow
         "
       />
       <p className="mt-3 text-xl font-semibold text-white">{name}</p>
