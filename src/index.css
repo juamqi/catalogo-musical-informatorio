@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-  font-family: 'Zen Tokyo Zoo', cursive;
+  font-family: 'Zen Tokyo Zoo', sans-serif;
   color: #FF6500;
 }
 
@@ -20,9 +20,6 @@ h1 {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   transform-origin: center;
-  animation: equalizer 1.8s ease-in-out infinite;
-  background: linear-gradient(to top, #ff6500, #ff9a00);
-  filter: drop-shadow(0 0 4px #ff6500aa);
 }
 
 @keyframes equalizer {
