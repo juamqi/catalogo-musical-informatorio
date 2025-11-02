@@ -1,4 +1,3 @@
-// Import local images
 import inRainbows from "../assets/albums/in-rainbows.jpg";
 import NFR from "../assets/albums/nfr.png";
 import boxer from "../assets/albums/boxer.jpg";
@@ -12,12 +11,12 @@ import brightFuture from "../assets/albums/bright-future.jpg";
 import kidA from "../assets/albums/kid-a.png";
 import capacity from "../assets/albums/capacity.webp";
 import ufof from "../assets/albums/ufof.webp";
-import beingFunny from "../assets/albums/twfm.webp";
+import beingFunny from "../assets/albums/bfiafl.jpg";
 import notesConditional from "../assets/albums/noacf.webp";
 import alvvaysAlbum from "../assets/albums/alvvays.jpg";
 import blueRev from "../assets/albums/blue-rev.webp";
-import strangerAlps from "../assets/albums/bfiafl.jpg";
-import troubleFindMe from "../assets/albums/sita.avif";
+import strangerAlps from "../assets/albums/sita.avif";
+import troubleFindMe from "../assets/albums/twfm.webp";
 import ultraviolence from "../assets/albums/ultraviolence.png";
 import clairo from "../assets/artists/clairo.jpg";
 import bigThief from "../assets/artists/big-thief.jpeg";
@@ -37,7 +36,7 @@ export const albums = [
   { id: 4, title: "Punisher", artist: "Phoebe Bridgers", year: 2020, cover: punisher },
   { id: 5, title: "Charm", artist: "Clairo", year: 2024, cover: charm },
   { id: 6, title: "Immunity", artist: "Clairo", year: 2019, cover: immunity },
-  { id: 7, title: "Songs", artist: "Adrianne Lenker", year: 2020, cover: songs },
+  { id: 7, title: "songs", artist: "Adrianne Lenker", year: 2020, cover: songs },
   { id: 8, title: "Bright Future", artist: "Adrianne Lenker", year: 2024, cover: brightFuture },
   { id: 9, title: "Melodrama", artist: "Lorde", year: 2017, cover: melodrama },
   { id: 10, title: "Pure Heroine", artist: "Lorde", year: 2013, cover: pureHeroine },
