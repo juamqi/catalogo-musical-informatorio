@@ -5,26 +5,16 @@ import ArtistCard from "../components/ArtistCard";
 import MusicParticles from "../components/MusicParticles";
 import Section from "../components/Section";
 import "../index.css";
-
-const CORS = "https://proxy.corsfix.com/?";
-const BASE = "https://api.deezer.com";
+import { fetchFromDeezer } from "../api/deezer";
 
 async function fetchAlbum(query) {
-  const res = await fetch(
-    `${CORS}${BASE}/search/album?q=${encodeURIComponent(query)}`
-  );
-  if (!res.ok) throw new Error("Error al buscar álbum");
-  const json = await res.json();
-  return json.data[0];
+  const json = await fetchFromDeezer("/search/album", { q: query });
+  return json.data?.[0];
 }
 
 async function fetchArtist(query) {
-  const res = await fetch(
-    `${CORS}${BASE}/search/artist?q=${encodeURIComponent(query)}`
-  );
-  if (!res.ok) throw new Error("Error al buscar artista");
-  const json = await res.json();
-  return json.data[0];
+  const json = await fetchFromDeezer("/search/artist", { q: query });
+  return json.data?.[0];
 }
 
 export default function Home() {
