@@ -19,36 +19,30 @@ export default function Login() {
   };
 
   return (
-    <main className="min-h-[calc(100vh-140px)] flex items-center justify-center px-6">
-      <div className="w-full max-w-md bg-black/50 border border-white/10 rounded-xl p-8 shadow-lg">
-        <h1 className="text-3xl font-semibold mb-6 text-center">Iniciar sesión</h1>
+    <main className="min-h-[calc(100vh-7rem)] flex items-center justify-center">
+      <div className="w-full max-w-xs">
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-          <label className="flex flex-col gap-2 text-sm">
-            <span className="text-gray-300">Email o usuario</span>
+          <label className="flex flex-col text-sm">
             <input
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#FF6500] placeholder:text-gray-500"
-              placeholder="usuario@mail.com"
+              className="py-3 text-white focus:outline-none focus:border-[#EDF252] placeholder:text-gray-500 border-b border-gray-500"
+              placeholder="Nombre de usuario"
               required
             />
           </label>
-          <label className="flex flex-col gap-2 text-sm">
-            <span className="text-gray-300">Contraseña</span>
+          <label className="flex flex-col text-sm">
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#FF6500] placeholder:text-gray-500"
-              placeholder="••••••••"
+              className="py-3 text-white focus:outline-none focus:border-[#EDF252] placeholder:text-gray-500 border-b border-gray-500"
+              placeholder="Contraseña"
               required
             />
           </label>
-          <button
-            type="submit"
-            className="mt-2 w-full py-3 rounded-lg bg-[#FF6500] text-black font-semibold hover:bg-white transition-colors"
-          >
+          <button type="submit" className="mt-8 w-full py-3 rounded-full bg-[#EDF252] text-black font-semibold hover:bg-white transition-colors">
             Iniciar sesión
           </button>
         </form>

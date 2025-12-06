@@ -83,8 +83,8 @@ export default function AlbumCard({
           onClick={handleFavorite}
           disabled={isPending}
           className={`w-8 h-8 rounded-full flex items-center justify-center border transition disabled:opacity-50 ${isFavorite
-            ? "bg-[#FF6500] border-[#FF6500] text-black"
-            : "border-[#FF6500] text-[#FF6500] hover:bg-[#FF6500] hover:text-black"
+            ? "bg-[#EDF252] border-[#EDF252] text-black"
+            : "border-[#EDF252] text-[#EDF252] hover:bg-[#EDF252] hover:text-black"
             }`}
         >
           {favoriteIcon}

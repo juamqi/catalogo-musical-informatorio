@@ -16,8 +16,7 @@ export default function Artists() {
 
   return (
     <main className={containerClasses}>
-      <h1 className="text-6xl mb-2">ARTISTAS</h1>
-      <p className="text-md mb-6">Encontrá a tus favoritos.</p>
+      <h1 className="text-6xl mb-8 tracking-wider">ARTISTAS</h1>
       <SearchBar
         onSearch={(q) => setQuery(q)}
         placeholder="Buscar artista..."

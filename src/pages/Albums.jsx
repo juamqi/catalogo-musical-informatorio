@@ -16,8 +16,7 @@ export default function Albums() {
 
   return (
     <main className={containerClasses}>
-      <h1 className="text-6xl mb-2">ÁLBUMES</h1>
-      <p className="text-md mb-6">Encontrá a tus favoritos.</p>
+      <h1 className="text-6xl mb-8 tracking-wider">ÁLBUMES</h1>
       <SearchBar
         onSearch={(q) => setQuery(q)}
         placeholder="Buscar álbum..."
@@ -33,7 +32,7 @@ export default function Albums() {
         <p className="text-gray-400">No se encontraron resultados.</p>
       )}
       {shouldShowResults && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-4">
+        <div className="grid grid-cols-4 gap-8 mt-4">
           {albums.map((a) => (
             <AlbumCard
               key={a.id}

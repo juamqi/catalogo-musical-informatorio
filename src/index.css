@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
-body {
-  background-color: #0B192C;
-  color: #FFFFFF;
-  font-family: 'Manrope', sans-serif;
+:root {
+  --cursor-dot-size: 6px;
+  --cursor-outline-size: 36px;
+  --cursor-outline-size-hover: 60px;
+  --cursor-outline-border: 1.5px;
 }
 
 h1 {
-  font-family: 'Zen Tokyo Zoo', sans-serif;
-  color: #FF6500;
+  font-family: 'League Gothic', sans-serif;
+  color: #EDF252;
 }
 
 .card-glow:hover {
-  box-shadow: 0 0 20px #ff6500aa;
+  box-shadow: 0 0 20px #EDF252aa;
 }
 
 .animate-equalizer {
@@ -46,4 +47,65 @@ h1 {
   100% {
     transform: scaleY(0.4);
   }
+}
+
+body {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  font-family: 'Host Grotesk', sans-serif;
+}
+
+.custom-cursor-enabled,
+.custom-cursor-enabled a,
+.custom-cursor-enabled button {
+  cursor: none;
+}
+
+.cursor-dot {
+  width: var(--cursor-dot-size);
+  height: var(--cursor-dot-size);
+  background: #EDF252;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.1s ease-out;
+}
+
+.cursor-outline {
+  width: var(--cursor-outline-size);
+  height: var(--cursor-outline-size);
+  border: var(--cursor-outline-border) solid #EDF252;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  transition:
+    width 0.2s ease-out,
+    height 0.2s ease-out,
+    border-radius 0.2s ease-out,
+    transform 0.1s ease-out,
+    opacity 0.15s ease;
+}
+
+.custom-cursor-visible .cursor-dot {
+  opacity: 1;
+}
+
+.custom-cursor-visible .cursor-outline {
+  opacity: 1;
+}
+
+body.cursor-link-active .cursor-dot {
+  opacity: 0 !important;
+}
+
+body.cursor-link-active .cursor-outline {
+  width: var(--cursor-outline-size-hover);
+  height: var(--cursor-outline-size-hover);
+  border-radius: 999px;
 }

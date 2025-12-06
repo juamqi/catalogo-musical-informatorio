@@ -25,12 +25,12 @@ export default function Home() {
   } = useQuery({
     queryKey: ["featured-albums"],
     queryFn: async () => {
-      const [inRainbows, nfr, boxer] = await Promise.all([
-        fetchAlbum("In Rainbows Radiohead"),
+      const [nfr, songs, lcd] = await Promise.all([
         fetchAlbum("Norman Fucking Rockwell Lana Del Rey"),
-        fetchAlbum("Boxer The National"),
+        fetchAlbum("songs Adrianne Lenker"),
+        fetchAlbum("This LCD Soundsystem"),
       ]);
-      return [inRainbows, nfr, boxer].filter(Boolean);
+      return [nfr, songs, lcd].filter(Boolean);
     },
   });
 
@@ -51,68 +51,61 @@ export default function Home() {
   });
 
   return (
-    <main className="relative flex flex-col items-center gap-25">
+    <main className="relative flex flex-col items-center">
       <MusicParticles />
-      <Section className="relative z-10">
-        <div className="flex justify-between items-center mt-10">
-          <h1 className="text-6xl leading-tight">
-            ÁLBUMES
-            <br />
-            DESTACADOS
+      <Section className="relative z-10 min-h-[calc(100vh-7rem)] flex flex-col justify-center">
+        <div className="flex justify-between items-center">
+          <h1 className="text-7xl tracking-wider">
+            ÁLBUMES DESTACADOS
           </h1>
-          <Link
-            to="/albums"
-            className="px-8 py-3 rounded-full bg-[#FF6500] text-black font-semibold text-base shadow-lg hover:bg-white hover:text-black hover:shadow-[#FF6500]/50 transition-all duration-300"
-          >
-            VER MÁS
+          <Link to="/albums" className="px-8 py-3 rounded-full bg-[#EDF252] text-black font-semibold text-base shadow-lg hover:bg-white hover:text-black hover:shadow-[#EDF252]/50 transition-all duration-300">
+            Explorar
           </Link>
         </div>
-        <div className="flex flex-wrap justify-center gap-10 mt-10">
-          {albumsLoading && (
-            <p className="text-gray-300">Cargando álbumes destacados...</p>
-          )}
-          {albumsError && (
-            <p className="text-red-400">
-              Ocurrió un error al cargar los álbumes.
-            </p>
-          )}
-          {!albumsLoading &&
-            !albumsError &&
-            featuredAlbums?.map((a) => (
-              <AlbumCard
-                key={a.id}
-                id={a.id}
-                title={a.title}
-                artist={a.artist?.name}
-                year={a.release_date?.slice(0, 4)}
-                cover={a.cover_medium}
-              />
-            ))}
+        <div className="relative mt-16 w-full flex justify-center">
+          <div className="pointer-events-none absolute left-0 right-0 pb-24 top-1/2 -translate-y-1/2 flex gap-1 px-2 items-center justify-center">
+            {Array.from({ length: 200 }).map((_, i) => {
+              const duration = 4;
+              const delay = -(Math.random() * duration).toFixed(2);
+              return (
+                <div
+                  key={i}
+                  className="bg-[#EDF252] w-px h-24 animate-equalizer"
+                  style={{ animationDelay: `${delay}s`, animationDuration: `${duration}s` }}
+                />
+              );
+            })}
+          </div>
+          <div className="relative z-10 flex flex-wrap justify-center gap-16">
+            {albumsLoading && (
+              <p className="text-gray-300">Cargando álbumes destacados...</p>
+            )}
+            {albumsError && (
+              <p className="text-red-400">
+                Ocurrió un error al cargar los álbumes.
+              </p>
+            )}
+            {!albumsLoading &&
+              !albumsError &&
+              featuredAlbums?.map((a) => (
+                <AlbumCard
+                  key={a.id}
+                  id={a.id}
+                  title={a.title}
+                  artist={a.artist?.name}
+                  year={a.release_date?.slice(0, 4)}
+                  cover={a.cover_medium}
+                />
+              ))}
+          </div>
         </div>
       </Section>
-      <div className="absolute w-full flex gap-1 px-2 items-center justify-center mt-85">
-        {Array.from({ length: 200 }).map((_, i) => {
-          const delay = -(Math.random() * 1.8).toFixed(2);
-          return (
-            <div
-              key={i}
-              className="bg-[#FF6500] w-px h-25 animate-equalizer"
-              style={{ animationDelay: `${delay}s`, animationDuration: "1.8s" }}
-            />
-          );
-        })}
-      </div>
-      <Section className="relative text-center flex flex-col items-center mb-50">
-        <h1 className="text-6xl leading-tight">
-          ARTISTAS
-          <br />
-          DESTACADOS
+      <Section className="relative text-center flex flex-col items-center mb-64">
+        <h1 className="text-6xl tracking-wider">
+          ARTISTAS DESTACADOS
         </h1>
-        <Link
-          to="/artists"
-          className="z-10 absolute mt-42 px-8 py-3 rounded-full bg-[#FF6500] text-black font-semibold text-base shadow-lg hover:bg-white hover:text-black hover:shadow-[#FF6500]/50 transition-all duration-300"
-        >
-          VER MÁS
+        <Link to="/artists" className="z-10 absolute mt-32 px-8 py-3 rounded-full bg-[#EDF252] text-black font-semibold text-base shadow-lg hover:bg-white hover:text-black hover:shadow-[#EDF252]/50 transition-all duration-300">
+          Explorar
         </Link>
         {artistsLoading && (
           <p className="mt-10 text-gray-300">Cargando artistas destacados...</p>

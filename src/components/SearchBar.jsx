@@ -22,7 +22,7 @@ export default function SearchBar({
   };
 
   return (
-    <div className="w-full max-w-3xl flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-full shadow-sm px-4 py-2">
+    <div className="w-full max-w-2xl flex items-center gap-3 bg-white backdrop-blur-sm shadow-sm px-4 py-2 mb-6">
       <input
         type="text"
         placeholder={placeholder}

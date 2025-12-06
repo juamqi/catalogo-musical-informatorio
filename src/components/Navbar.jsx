@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const linkStyle = (path) =>
     `relative text-base tracking-wide transition-all duration-300 ${location.pathname === path
-      ? "text-[#FF6500] font-semibold"
+      ? "text-[#EDF252] font-semibold"
       : "text-white"
     }`;
 
@@ -18,11 +18,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full bg-black/40 backdrop-blur-md shadow-lg py-5 px-10 flex justify-between items-center sticky top-0 z-50 border-b border-white/10">
-      <Link to="/" className="text-lg text-white tracking-widest">
-        Mi Catálogo Musical
+    <nav className="w-full h-16 backdrop-blur-md shadow-lg px-10 flex items-center sticky top-0 z-50 border-b border-[#BBBF49]/50">
+      <Link to="/" className="flex-none w-60 text-lg text-[#BBBF49] tracking-widest">
+        Catálogo Musical
       </Link>
-      <div className="flex items-center gap-8">
+
+      <div className="flex-1 flex justify-center">
         <div className="flex gap-8">
           <Link to="/" className={linkStyle("/")}>
             Inicio
@@ -39,23 +40,24 @@ export default function Navbar() {
             </Link>
           )}
         </div>
-        <div className="flex items-center gap-3">
-          {!isAuthenticated ? (
-            <Link
-              to="/login"
-              className="px-4 py-2 rounded-full border border-[#FF6500] text-[#FF6500] hover:bg-[#FF6500] hover:text-black transition-colors"
-            >
-              Login
-            </Link>
-          ) : (
-            <button
-              onClick={handleLogout}
-              className="px-4 py-2 rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors"
-            >
-              Logout
-            </button>
-          )}
-        </div>
+      </div>
+
+      <div className="flex-none w-60 flex items-center justify-end gap-3">
+        {!isAuthenticated ? (
+          <Link
+            to="/login"
+            className="text-[#EDF252] transition-colors"
+          >
+            Iniciar sesión
+          </Link>
+        ) : (
+          <button
+            onClick={handleLogout}
+            className="text-red-500 transition-colors"
+          >
+            Cerrar sesión
+          </button>
+        )}
       </div>
     </nav>
   );

@@ -9,11 +9,13 @@ import Favoritos from "./pages/Favoritos";
 import PrivateRoute from "./router/PrivateRoute";
 import PublicOnlyRoute from "./router/PublicOnlyRoute";
 import { AuthProvider } from "./context/AuthContext";
+import CustomCursor from "./components/CustomCursor";
 
 export default function App() {
   return (
     <AuthProvider>
       <Router>
+        <CustomCursor />
         <div>
           <Navbar />
           <main>
