@@ -1,18 +1,68 @@
+import { useEffect, useState } from "react";
 import { useFavoriteAlbum } from "../hooks/useFavoriteAlbum";
+import { useAuth } from "../context/AuthContext";
+import {
+  addFavorite,
+  isFavorite as isFavoriteStored,
+  removeFavorite,
+} from "../utils/favorites";
 
 export default function AlbumCard({
   id,
   title,
   artist,
+  year,
   cover,
   width = 296,
   height = 296,
 }) {
-  const { mutate, isPending, isSuccess, isError } = useFavoriteAlbum();
+  const { mutate, isPending, isError } = useFavoriteAlbum();
+  const { isAuthenticated } = useAuth();
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    setIsFavorite(isFavoriteStored(id));
+
+    const syncFavorites = () => setIsFavorite(isFavoriteStored(id));
+    window.addEventListener("favoritesUpdated", syncFavorites);
+    window.addEventListener("storage", syncFavorites);
+    return () => {
+      window.removeEventListener("favoritesUpdated", syncFavorites);
+      window.removeEventListener("storage", syncFavorites);
+    };
+  }, [id]);
 
   const handleFavorite = () => {
-    mutate({ id, title, artist, });
+    if (!isAuthenticated) {
+      alert("Debés iniciar sesión para agregar favoritos.");
+      return;
+    }
+
+    if (!id) return;
+    if (isFavorite) {
+      removeFavorite(id);
+      setIsFavorite(false);
+      return;
+    }
+
+    mutate(
+      { id, title, artist },
+      {
+        onSuccess: () => {
+          addFavorite({ id, title, artist, year, cover });
+          setIsFavorite(true);
+        },
+      }
+    );
   };
+
+  const favoriteIcon = isPending ? (
+    <span className="animate-spin">⟳</span>
+  ) : isFavorite ? (
+    "❤"
+  ) : (
+    "♡"
+  );
 
   return (
     <div className="flex flex-col items-start w-80 p-3 transform transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03]">
@@ -32,14 +82,12 @@ export default function AlbumCard({
         <button
           onClick={handleFavorite}
           disabled={isPending}
-          className="w-8 h-8 rounded-full flex items-center justify-center border border-[#FF6500] text-[#FF6500] hover:bg-[#FF6500] hover:text-black transition disabled:opacity-50">
-          {isPending ? (
-            <span className="animate-spin">⟳</span>
-          ) : isSuccess ? (
-            "❤"
-          ) : (
-            "♡"
-          )}
+          className={`w-8 h-8 rounded-full flex items-center justify-center border transition disabled:opacity-50 ${isFavorite
+            ? "bg-[#FF6500] border-[#FF6500] text-black"
+            : "border-[#FF6500] text-[#FF6500] hover:bg-[#FF6500] hover:text-black"
+            }`}
+        >
+          {favoriteIcon}
         </button>
         {isError && (
           <p className="text-xs text-red-400 mt-1">Hubo un error</p>

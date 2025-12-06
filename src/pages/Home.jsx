@@ -84,6 +84,7 @@ export default function Home() {
                 id={a.id}
                 title={a.title}
                 artist={a.artist?.name}
+                year={a.release_date?.slice(0, 4)}
                 cover={a.cover_medium}
               />
             ))}
