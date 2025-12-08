@@ -9,13 +9,13 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   if (isAuthenticated) {
-    return <Navigate to="/favoritos" replace />;
+    return <Navigate to="/" replace />;
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     login({ email, password });
-    navigate("/favoritos", { replace: true });
+    navigate("/", { replace: true });
   };
 
   return (

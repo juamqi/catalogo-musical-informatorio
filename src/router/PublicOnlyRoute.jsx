@@ -5,7 +5,7 @@ export default function PublicOnlyRoute({ children }) {
   const { isAuthenticated } = useAuth();
 
   if (isAuthenticated) {
-    return <Navigate to="/favoritos" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return children;

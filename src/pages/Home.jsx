@@ -104,7 +104,7 @@ export default function Home() {
         <h1 className="text-6xl tracking-wider">
           ARTISTAS DESTACADOS
         </h1>
-        <Link to="/artists" className="z-10 absolute mt-32 px-8 py-3 rounded-full bg-[#EDF252] text-black font-semibold text-base shadow-lg hover:bg-white hover:text-black hover:shadow-[#EDF252]/50 transition-all duration-300">
+        <Link to="/artists" className="z-10 absolute mt-28 px-8 py-3 rounded-full bg-[#EDF252] text-black font-semibold text-base shadow-lg hover:bg-white hover:text-black hover:shadow-[#EDF252]/50 transition-all duration-300">
           Explorar
         </Link>
         {artistsLoading && (

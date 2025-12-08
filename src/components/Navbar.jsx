@@ -25,7 +25,7 @@ export default function Navbar() {
 
       <div className="flex-1 flex justify-center">
         <div className="flex gap-8">
-          <Link to="/" className={linkStyle("/")}>
+          <Link to="/" className= {linkStyle("/")}>
             Inicio
           </Link>
           <Link to="/albums" className={linkStyle("/albums")}>

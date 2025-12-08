@@ -20,8 +20,8 @@ export default function Favoritos() {
   }, []);
 
   return (
-    <main className="min-h-[calc(100vh-140px)] flex flex-col items-center justify-start pt-12 pb-28">
-      <div className="px-10 flex flex-col items-start">
+    <main className="min-h-[calc(100vh-140px)] flex flex-col items-center justify-center pt-12 pb-28">
+      <div className="px-10 flex flex-col items-center">
         <h1 className="text-6xl mb-8 tracking-wider">TUS FAVORITOS</h1>
         {favoritos.length === 0 ? (
           <p className="text-gray-400 text-lg">No tenés álbumes favoritos guardados.</p>
